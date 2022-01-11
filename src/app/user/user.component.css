@@ -1,0 +1,25 @@
+td {
+  padding: 5px;
+  border: 1px solid #fff;
+  background: silver;
+  color: red;
+}
+
+button {
+  border: transparent;
+  padding: 5px;
+  border: 1px solid black;
+  width: 80px;
+}
+
+button.delete {
+  border-radius: 30px;
+  background: #fff;
+  color: red;
+}
+
+button.update {
+  border-radius: 30px;
+  background: #fff;
+  color: rgb(196, 90, 28) (5, 4, 4);
+}
