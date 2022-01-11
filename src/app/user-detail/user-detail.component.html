@@ -28,6 +28,16 @@
     />
   </div>
   <div class="form-group">
+    <label for="email">Email</label>
+    <input
+      class="form-control"
+      [(ngModel)]="user.email"
+      type="email"
+      name="email"
+      id="email"
+    />
+  </div>
+  <div class="form-group">
     <label for="phone">Phone</label>
     <input
       class="form-control"
@@ -36,14 +46,14 @@
       id="phone"
     />
   </div>
+
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="province">Provincia</label>
     <input
       class="form-control"
-      [(ngModel)]="user.email"
-      type="email"
-      name="email"
-      id="email"
+      [(ngModel)]="user.province"
+      name="province"
+      id="province"
     />
   </div>
   <div class="form-group">
