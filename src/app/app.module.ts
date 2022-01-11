@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './user/user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NavComponent } from './nav/nav.component';
 
 @NgModule({
   declarations: [
@@ -14,8 +16,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     UsersComponent,
     UserComponent,
     UserDetailComponent,
+    NavComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
 })
