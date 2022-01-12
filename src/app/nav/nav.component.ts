@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { User } from '../classes/User';
 
 @Component({
   selector: 'app-nav',
@@ -6,12 +7,12 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  @Output() onNewUser = new EventEmitter();
+  @Output() onNewUser = new EventEmitter<null>();
   constructor() {}
 
   ngOnInit(): void {}
-
-  newUser() {
+  newUser(evt: MouseEvent) {
+    evt.preventDefault();
     this.onNewUser.emit();
   }
 }

@@ -9,47 +9,51 @@ export class UserService {
   users: User[] = [
     {
       id: 1,
-      name: 'Marcello',
-      lastname: 'Bianchi',
-      email: 'mariorossi@gmail.com',
-      fiscalcode: 'SADCACC8464353',
+      name: 'Hidran1',
+      lastname: 'Arias1',
+      email: 'hidran@gmail.com',
+      fiscalcode: 'RSAHRN72M22Z444S',
       province: 'Torino',
-      phone: '3554581328',
+      phone: '454545455',
       age: 43,
     },
     {
       id: 2,
-      name: 'Mario',
-      lastname: 'Rossi',
-      email: 'mariorossi@gmail.com',
-      fiscalcode: 'SADCACC8464353',
+      name: 'Hidran2',
+      lastname: 'Arias2',
+      email: 'hidran@gmail.com',
+      fiscalcode: 'RSAHRN72M22Z444S',
       province: 'Torino',
-      phone: '3554581328',
+      phone: '454545455',
       age: 43,
     },
     {
       id: 3,
-      name: 'Marcello',
-      lastname: 'Rossi',
-      email: 'mariorossi@gmail.com',
-      fiscalcode: 'SADCACC8464353',
+      name: 'Hidran3',
+      lastname: 'Arias3',
+      email: 'hidran@gmail.com',
+      fiscalcode: 'RSAHRN72M22Z444S',
       province: 'Torino',
-      phone: '3554581328',
+      phone: '454545455',
       age: 43,
     },
     {
       id: 4,
-      name: 'Marcello',
-      lastname: 'Rossi',
-      email: 'mariorossi@gmail.com',
-      fiscalcode: 'SADCACC8464353',
+      name: 'Hidran4',
+      lastname: 'Arias4',
+      email: 'hidran@gmail.com',
+      fiscalcode: 'RSAHRN72M22Z444S',
       province: 'Torino',
-      phone: '3554581328',
+      phone: '454545455',
       age: 43,
     },
   ];
-  getUsers() {
+
+  getUsers(): User[] {
     return this.users;
+  }
+  getUser(id: number): User | undefined {
+    return this.users.find((user) => user.id === id);
   }
   deleteUser(user: User) {
     const index = this.users.indexOf(user);
@@ -57,15 +61,14 @@ export class UserService {
       this.users.splice(index, 1);
     }
   }
-
   updateUser(user: UserInterface) {
-    const idx = this.users.findIndex((v) => v.id == user.id);
-    alert(idx);
+    const idx = this.users.findIndex((v) => v.id === user.id);
+
     if (idx !== -1) {
-      this.users[idx] = user;
+      this.users[idx] = { ...user };
     }
   }
   createUser(user: UserInterface) {
-    this.users.splice(0, 0, user);
+    this.users.splice(0, 0, { ...user });
   }
 }

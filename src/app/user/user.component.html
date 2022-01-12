@@ -7,15 +7,17 @@
 <td>{{ user?.age }}</td>
 <td>
   <div class="row">
-    <div class="col-sm-6">
-      <button class="btn btn-primary btn-sm" (click)="updateUser()">
+    <div class="col-sm">
+      <a
+        class="btn btn-sm btn-primary"
+        [routerLink]="['/users/', user?.id, 'edit']"
+      >
         <fa-icon [icon]="faPen"></fa-icon>
-      </button>
+      </a>
     </div>
-
-    <div class="col-sm-6">
-      <button class="btn btn-danger btn-sm" (click)="deleteUser()">
-        <fa-icon [icon]="faUser"></fa-icon>
+    <div class="col-sm">
+      <button class="btn btn-sm btn-danger" (click)="deleteUser()">
+        <fa-icon [icon]="faTrash"></fa-icon>
       </button>
     </div>
   </div>
