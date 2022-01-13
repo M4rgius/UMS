@@ -5,19 +5,21 @@
 <td>{{ user?.phone }}</td>
 <td>{{ user?.province }}</td>
 <td>{{ user?.age }}</td>
-<td>
+<td class="buttons">
   <div class="row">
-    <div class="col-sm">
-      <a
-        class="btn btn-sm btn-primary"
-        [routerLink]="['/users/', user?.id, 'edit']"
-      >
-        <fa-icon [icon]="faPen"></fa-icon>
-      </a>
+    <div class="col-sm-3">
+      <button class="btn btn-sm btn-primary" (click)="showUserDetaill()">
+        <fa-icon [icon]="faInfo" fixed="true"></fa-icon>
+      </button>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-3">
+      <button class="btn btn-sm btn-primary" (click)="updateUser()">
+        <fa-icon [icon]="faPen" fixed="true"></fa-icon>
+      </button>
+    </div>
+    <div class="col-sm-3">
       <button class="btn btn-sm btn-danger" (click)="deleteUser()">
-        <fa-icon [icon]="faTrash"></fa-icon>
+        <fa-icon [icon]="faTrash" fixed="true"></fa-icon>
       </button>
     </div>
   </div>

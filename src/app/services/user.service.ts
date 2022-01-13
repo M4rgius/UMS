@@ -63,12 +63,13 @@ export class UserService {
   }
   updateUser(user: UserInterface) {
     const idx = this.users.findIndex((v) => v.id === user.id);
-
+    alert(idx);
     if (idx !== -1) {
-      this.users[idx] = { ...user };
+      this.users[idx] = user;
     }
   }
   createUser(user: UserInterface) {
+    user.id = this.users.length + 1;
     this.users.splice(0, 0, { ...user });
   }
 }
