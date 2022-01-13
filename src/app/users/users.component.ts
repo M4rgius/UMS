@@ -1,25 +1,27 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { User } from '../classes/User';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { UserService } from '../services/user.service';
+import { User } from '../classes/User';
 
 @Component({
   selector: 'app-users',
-
-  templateUrl: 'users.component.html',
-  styleUrls: ['users.component.css'],
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
   title = 'Users';
-  public users: User[] = [];
+  users: User[] = [];
   @Output('updateUser') updateUser = new EventEmitter<User>();
 
-  constructor(private service: UserService) {}
-  ngOnInit(): void {
-    this.users = this.service.getUsers();
+  constructor(private userService: UserService) {}
+
+  ngOnInit() {
+    this.users = this.userService.getUsers();
   }
+
   onDeleteUser(user: User) {
-    this.service.deleteUser(user);
+    this.userService.deleteUser(user);
   }
+
   onSelectUser(user: User) {
     const userCopy = Object.assign({}, user);
     this.updateUser.emit(userCopy);

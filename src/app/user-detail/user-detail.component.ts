@@ -32,7 +32,15 @@ export class UserDetailComponent implements OnInit {
     this.usercopy = new User();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.params.subscribe((param) => {
+      const id = Number(param.id); // '12'
+      const user = this.userService.getUser(id);
+      if (user) {
+        this.user = user;
+      }
+    });
+  }
   saveUser() {
     if (this.user.id > 0) {
       this.userService.updateUser(this.user);
